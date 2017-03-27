@@ -38,7 +38,26 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
-</div>
+    <!--(if) ? (then) : (else) -->
+   <!-- <h3><span th:text="${jobs.size()}"/> Result(s)</h3> -->
 
+<!-- th:if="${jobs.size() != null and jobs.size() gt 0}" -->
+  <!-- <h3><span th:if="${jobs.size()} == !null" ? span th:text="${jobs.size()}"></span> Result(s)</h3> -->
+
+
+<div>
+
+<table class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="entry : ${job}">
+            <td th:text="${entry.key}"></td>
+            <td th:text="${entry.value}"></td>
+        </tr>
+
+    </table>
+
+
+
+</div>
+</div>
 </body>
 </html>
